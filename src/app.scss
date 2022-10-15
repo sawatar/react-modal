@@ -1,0 +1,65 @@
+.App{
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}
+.overlay{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+}
+.open-modal-btn{
+    background-color: white;
+    box-shadow: 0 3px 5px 1px rgb(190, 190, 190);
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+    &:hover{
+        transition: .3s all ease;
+        background-color: black;
+        color: white;
+    }
+}
+.modal{
+    margin: 150px 0;
+    width: 350px;
+    height: 170px;
+    background-color: white;
+    border-radius: 5px;
+    h2{
+        align-items: center;
+        padding: 10px 30px;
+        text-align: center;
+        text-transform: capitalize;
+    }
+    .close{
+        padding: 20px 30px;
+    }
+    .close::after,.close::before{
+        cursor: pointer;
+        float: right;
+        display: block;
+        content: "";
+        width: 1px;
+        height: 25px;
+        background-color: black;
+        
+    }
+    .close::after{
+        height: 25px;
+        transform: rotate(45deg);
+    }
+    .close::before{
+        transform: rotate(-45deg);
+    }
+    
+}

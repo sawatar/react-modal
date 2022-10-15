@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
 
-function App() {
+import "./app.scss";
+
+const App = ()=> {
+  const [open,setOpen] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => setOpen(true)} className="open-modal-btn">🥳 Открыть окошко!</button>
+      {
+        open &&(
+          <div className="overlay">
+        <div className="modal">
+          <div onClick={() =>setOpen(false)} className="close"></div>
+          <h2>спокойной ночи</h2>
+          <iframe src="https://gifer.com/embed/8q4" width="350px" height="170.325" frameBorder="0" allowFullScreen></iframe>
+        </div>
+      </div>
+        )
+      }
     </div>
   );
 }
